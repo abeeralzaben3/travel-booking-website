@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===================== TITLE ===================== -->
+    <title>Book Your Trip to Edinburgh | TravelGo</title>
+
+    <!-- ===================== META DATA ===================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your dream trip to Edinburgh, Scotland with TravelGo. Fill out our comprehensive booking form to reserve your flights, hotel, and tours.">
+    <meta name="keywords" content="Edinburgh booking, Scotland travel booking, book flights, hotel reservation, TravelGo">
+
+    <!-- ===================== FAVICON ===================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <!-- ===================== HEADER ===================== -->
+    <header>
+        <p><strong>TravelGo</strong></p>
+        <img src="favicon.png" alt="TravelGo Logo" width="80" height="80">
+        <p><em>Your Gateway to Adventure</em></p>
+
+        <!-- ===================== NAVIGATION ===================== -->
+        <!-- Links to sections on index.html, plus internal links to form sections on this page -->
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="index.html#destination">Destination</a> |
+            <a href="index.html#travel-info">Travel Information</a> |
+            <a href="#personal-info">Personal Info</a> |
+            <a href="#travel-details">Travel Details</a> |
+            <a href="#advanced">Advanced Options</a> |
+            <a href="booking.html">Book Now</a>
+        </nav>
+    </header>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main>
+
+        <!-- ===================== PAGE TITLE ===================== -->
+        <h1>Book Your Trip to Edinburgh 🏴󠁧󠁢󠁳󠁣󠁴󠁿</h1>
+
+        <p>
+            Fill out the form below to reserve your dream trip to Edinburgh,
+            Scotland. All fields marked with <strong>*</strong> are required.
+        </p>
+
+        <!-- ===================== BOOKING FORM ===================== -->
+        <!-- action: server endpoint | method="post": sends data securely | autocomplete: browser suggestions -->
+        <form action="submit-booking.php"
+              method="post"
+              target="_self"
+              autocomplete="on">
+
+            <!-- ===================== PERSONAL INFORMATION ===================== -->
+            <!-- <fieldset>: groups related form fields | <legend>: title of the group -->
+            <fieldset id="personal-info">
+                <legend>👤 Personal Information</legend>
+
+                <!-- ========== Full Name ========== -->
+                <label for="fullname">Full Name *</label>
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Enter your full name"
+                    size="40"
+                    maxlength="60"
+                    required
+                >
+
+                <!-- ========== Email ========== -->
+                <label for="email">Email Address *</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    size="40"
+                    required
+                >
+
+                <!-- ========== Password ========== -->
+                <!-- minlength + maxlength: enforce password length -->
+                <label for="password">Password *</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter a strong password"
+                    minlength="8"
+                    maxlength="20"
+                    required
+                >
+
+                <!-- ========== Phone Number ========== -->
+                <label for="phone">Phone Number *</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+962 7XX XXX XXXX"
+                    size="20"
+                    required
+                >
+
+                <!-- ========== Date of Birth ========== -->
+                <label for="dob">Date of Birth *</label>
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required
+                >
+
+            </fieldset>
+
+            <!-- ===================== TRAVEL DETAILS ===================== -->
+            <fieldset id="travel-details">
+                <legend>✈️ Travel Details</legend>
+
+                <!-- ========== Departure City ========== -->
+                <label for="departure">Departure City *</label>
+                <input
+                    type="text"
+                    id="departure"
+                    name="departure"
+                    placeholder="e.g., Amman, Jordan"
+                    size="40"
+                    required
+                >
+
+                <!-- ========== Destination ========== -->
+                <!-- <select>: dropdown | <optgroup>: groups options | <option>: single choice -->
+                <label for="destination">Destination *</label>
+                <select id="destination" name="destination" required>
+                    <option value="">-- Select a destination --</option>
+
+                    <optgroup label="🌍 Europe">
+                        <option value="edinburgh">Edinburgh, Scotland</option>
+                        <option value="paris">Paris, France</option>
+                        <option value="rome">Rome, Italy</option>
+                    </optgroup>
+
+                    <optgroup label="🌏 Asia">
+                        <option value="tokyo">Tokyo, Japan</option>
+                        <option value="bali">Bali, Indonesia</option>
+                        <option value="seoul">Seoul, South Korea</option>
+                    </optgroup>
+
+                    <optgroup label="🌍 Middle East">
+                        <option value="dubai">Dubai, UAE</option>
+                        <option value="istanbul">Istanbul, Turkey</option>
+                        <option value="doha">Doha, Qatar</option>
+                    </optgroup>
+                </select>
+
+                <!-- ========== Travel Date ========== -->
+                <label for="travel-date">Travel Date *</label>
+                <input
+                    type="date"
+                    id="travel-date"
+                    name="travel-date"
+                    required
+                >
+
+                <!-- ========== Number of Travelers ========== -->
+                <!-- min + max: limit the allowed range -->
+                <label for="travelers">Number of Travelers *</label>
+                <input
+                    type="number"
+                    id="travelers"
+                    name="travelers"
+                    min="1"
+                    max="10"
+                    value="1"
+                    required
+                >
+
+                <hr>
+
+                <!-- ========== Travel Class (Radio Buttons) ========== -->
+                <!-- Radio buttons with the same "name" allow only ONE selection -->
+                <p><strong>Travel Class *</strong></p>
+
+                <label>
+                    <input type="radio" name="travel-class" value="economy" checked required>
+                    Economy
+                </label>
+
+                <label>
+                    <input type="radio" name="travel-class" value="business">
+                    Business
+                </label>
+
+                <label>
+                    <input type="radio" name="travel-class" value="first">
+                    First Class
+                </label>
+
+                <hr>
+
+                <!-- ========== Additional Services (Checkboxes) ========== -->
+                <!-- Checkboxes allow MULTIPLE selections -->
+                <p><strong>Additional Services</strong></p>
+
+                <label>
+                    <input type="checkbox" name="services" value="airport-transfer">
+                    Airport Transfer
+                </label>
+
+                <label>
+                    <input type="checkbox" name="services" value="hotel">
+                    Hotel Reservation
+                </label>
+
+                <label>
+                    <input type="checkbox" name="services" value="insurance">
+                    Travel Insurance
+                </label>
+
+                <label>
+                    <input type="checkbox" name="services" value="guided-tour">
+                    Guided Tour
+                </label>
+
+            </fieldset>
+
+            <!-- ===================== ADVANCED OPTIONS ===================== -->
+            <fieldset id="advanced">
+                <legend>⚙️ Advanced Options</legend>
+
+                <!-- ========== Special Requests ========== -->
+                <!-- <textarea>: multi-line text input | maxlength: character limit -->
+                <label for="requests">Special Requests</label>
+                <textarea
+                    id="requests"
+                    name="requests"
+                    rows="5"
+                    cols="50"
+                    placeholder="Tell us about any special requests, dietary needs, or accessibility requirements..."
+                    maxlength="500"
+                ></textarea>
+
+                <!-- ========== Document Upload ========== -->
+                <!-- multiple: allows uploading several files at once | accept: allowed file types -->
+                <label for="documents">Upload Documents (Passport / ID) *</label>
+                <input
+                    type="file"
+                    id="documents"
+                    name="documents"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                    multiple
+                    required
+                >
+                <small>Accepted formats: PDF, JPG, PNG. You can upload multiple files.</small>
+
+                <hr>
+
+                <!-- ========== Preferred Package (Datalist) ========== -->
+                <!-- <datalist>: gives suggestions while still allowing free typing -->
+                <label for="package">Preferred Package</label>
+                <input
+                    type="text"
+                    id="package"
+                    name="package"
+                    list="packages"
+                    placeholder="Start typing to see suggestions..."
+                    size="40"
+                >
+                <datalist id="packages">
+                    <option value="Edinburgh 5-Day Tour">
+                    <option value="Edinburgh Weekend Getaway">
+                    <option value="Edinburgh & Highlands Adventure">
+                    <option value="Edinburgh Festival Special">
+                    <option value="Edinburgh Luxury Package">
+                    <option value="Edinburgh Family Package">
+                </datalist>
+
+                <hr>
+
+                <!-- ========== Special Attributes Demonstration ========== -->
+                <!-- readonly: visible and submitted with form, but cannot be edited -->
+                <p><strong>🔒 Booking Reference (Read-only)</strong></p>
+                <label for="booking-ref">Your Booking Reference:</label>
+                <input
+                    type="text"
+                    id="booking-ref"
+                    name="booking-ref"
+                    value="TGV-2026-EDN-00123"
+                    readonly
+                    size="25"
+                >
+                <small>This field is auto-generated and cannot be edited.</small>
+
+                <!-- disabled: cannot be edited AND is NOT submitted with the form -->
+                <p><strong>🎁 Promotional Discount (Disabled)</strong></p>
+                <label for="discount">Promo Code:</label>
+                <input
+                    type="text"
+                    id="discount"
+                    name="discount"
+                    value="SUMMER10"
+                    disabled
+                    size="15"
+                >
+                <small>This promo code is currently unavailable.</small>
+
+            </fieldset>
+
+            <!-- ===================== ACTION BUTTONS ===================== -->
+            <!-- type="submit": sends the form | type="reset": clears all fields -->
+            <div>
+                <button type="submit">✅ Submit Booking</button>
+                <button type="reset">🔄 Clear Form</button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <hr>
+
+        <p><strong>TravelGo</strong> ✈️ — Your Gateway to Adventure</p>
+
+        <h3>📞 Contact Us</h3>
+        <ul>
+            <!-- mailto: opens the user's email app | tel: dials the number on mobile -->
+            <li><strong>Email:</strong> <a href="mailto:info@travelgo.com">info@travelgo.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+962790000000">+962 79 000 0000</a></li>
+            <li><strong>Address:</strong> Amman, Jordan</li>
+        </ul>
+
+        <h3>🔗 Quick Links</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#destination">Destination</a></li>
+            <li><a href="index.html#travel-info">Travel Information</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+
+        <h3>🌐 Follow Us</h3>
+        <ul>
+            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            <li><a href="https://twitter.com/" target="_blank">Twitter (X)</a></li>
+        </ul>
+
+        <hr>
+
+        <p>
+            <!-- &copy; : copyright symbol © -->
+            <small>&copy; 2026 <strong>TravelGo</strong>. All rights reserved.</small>
+        </p>
+    </footer>
+
+</body>
+</html>
